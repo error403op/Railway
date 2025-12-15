@@ -14,6 +14,11 @@ if [ -z "$START_CMD" ]; then
   exit 1
 fi
 
+if [ -n "$APT_PACKAGES" ]; then
+  echo "📦 Installing extra apt packages: $APT_PACKAGES"
+  apt-get update && apt-get install -y $APT_PACKAGES
+fi
+
 # Clone repo
 echo "📥 Cloning repository..."
 git clone --depth=1 "$REPO_URL" app
