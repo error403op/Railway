@@ -44,6 +44,8 @@ RUN apt-get update && apt-get install -y \
     \
     # Database drivers
     libpq-dev \
+    chromium \
+    chromium-driver \
     default-libmysqlclient-dev \
     \
     && rm -rf /var/lib/apt/lists/*
@@ -58,9 +60,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
 # -------------------------
 # Playwright + Chromium
 # -------------------------
-RUN npm install -g playwright \
-    && playwright install chromium \
-    && playwright install-deps chromium
+RUN npm install -g playwright
+
+ENV OPENSSL_CONF=/etc/ssl
+
+
+RUN playwright install chromium --with-deps || echo "Playwright browser installation skipped"
+
+# Set Chrome/Chromium environment variables
+ENV CHROME_BIN=/usr/bin/chromium
+ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
 
 # -------------------------
 # PhantomJS
