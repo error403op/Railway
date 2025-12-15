@@ -2,9 +2,7 @@
 
 Deploy **any GitHub repo** dynamically using ENV variables.
 
-[![Deploy on Railway](https://railway.app/button.svg)](
-https://railway.app/new/template?template=https://github.com/error403op/Railway
-)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/c_-gdp?referralCode=k4GZeS&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Environment Variables
 
