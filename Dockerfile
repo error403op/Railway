@@ -40,6 +40,12 @@ RUN apt-get update && apt-get install -y \
     libxdamage1 \
     libxfixes3 \
     libgbm1 \
+    libjpeg-dev \
+    zlib1g-dev \
+    libpng-dev \
+    libfreetype6-dev \
+    libtiff-dev \
+    libwebp-dev \
     libasound2 \
     \
     # Database drivers
@@ -50,6 +56,8 @@ RUN apt-get update && apt-get install -y \
     \
     && rm -rf /var/lib/apt/lists/*
 
+
+  
 # -------------------------
 # Node.js 20 LTS
 # -------------------------
