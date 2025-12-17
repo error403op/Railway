@@ -23,7 +23,6 @@ RUN apt-get update && apt-get install -y \
     \
     # Media & networking
     ffmpeg \
-    aria2 \
     \
     # Common runtime libs
     libglib2.0-0 \
