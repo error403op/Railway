@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     unzip \
     xz-utils \
+    redis-server \
     gnupg \
     \
     # Media & networking
@@ -102,6 +103,8 @@ RUN pip install --upgrade pip setuptools wheel
 # Workdir & entry
 # -------------------------
 WORKDIR /app
+
+EXPOSE 6379
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
