@@ -72,8 +72,9 @@ RUN npm install -g playwright
 
 ENV OPENSSL_CONF=/etc/ssl
 
+ENV PLAYWRIGHT_BROWSERS_PATH=0
 
-RUN playwright install chromium --with-deps || echo "Playwright browser installation skipped"
+RUN playwright install chromium
 
 # Set Chrome/Chromium environment variables
 ENV CHROME_BIN=/usr/bin/chromium
