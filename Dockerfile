@@ -101,7 +101,9 @@ RUN curl -fsSL https://deno.land/install.sh | sh \
 # Python tooling
 # -------------------------
 RUN pip install --upgrade pip setuptools wheel
-
+# Python Playwright
+RUN pip install playwright
+RUN python -m playwright install chromium
 # -------------------------
 # Workdir & entry
 # -------------------------
