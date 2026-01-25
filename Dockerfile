@@ -79,6 +79,13 @@ ENV OPENSSL_CONF=/etc/ssl
 
 RUN playwright install chromium
 
+
+# Python Playwright
+ENV PLAYWRIGHT_BROWSERS_PATH=0
+RUN pip install playwright
+RUN python -m playwright install chromium
+# -------------------------
+
 # Set Chrome/Chromium environment variables
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROMEDRIVER_PATH=/usr/bin/chromedriver
@@ -101,10 +108,7 @@ RUN curl -fsSL https://deno.land/install.sh | sh \
 # Python tooling
 # -------------------------
 RUN pip install --upgrade pip setuptools wheel
-# Python Playwright
-RUN pip install playwright
-RUN python -m playwright install chromium
-# -------------------------
+
 # Workdir & entry
 # -------------------------
 WORKDIR /app
