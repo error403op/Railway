@@ -68,11 +68,14 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
 # -------------------------
 # Playwright + Chromium
 # -------------------------
+
+ENV PLAYWRIGHT_BROWSERS_PATH=0
+
 RUN npm install -g playwright
 
 ENV OPENSSL_CONF=/etc/ssl
 
-ENV PLAYWRIGHT_BROWSERS_PATH=0
+
 
 RUN playwright install chromium
 
