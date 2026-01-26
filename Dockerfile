@@ -66,6 +66,13 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && npm install -g npm
 
 # -------------------------
+
+ENV BUN_INSTALL=/usr/local/bun
+RUN mkdir -p $BUN_INSTALL && \
+    curl -fsSL https://bun.sh/install | bash
+ENV PATH=$BUN_INSTALL/bin:$PATH
+
+
 # Playwright + Chromium
 # -------------------------
 
