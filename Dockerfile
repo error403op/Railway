@@ -76,7 +76,7 @@ ENV PATH=$BUN_INSTALL/bin:$PATH
 RUN wget https://github.com/iawia002/lux/releases/download/v0.23.0/lux_0.23.0_Linux_x86_64.tar.gz -O /tmp/lux.tar.gz \
     && tar -xzf /tmp/lux.tar.gz -C /usr/local/bin \
     && chmod +x /usr/local/bin/lux \
-    && rm /tmp/lux.tar.gz \
+    && rm /tmp/lux.tar.gz
 
 # Playwright + Chromium
 # -------------------------
