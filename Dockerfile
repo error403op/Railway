@@ -122,6 +122,7 @@ RUN pip install --upgrade pip setuptools wheel
 # -------------------------
 WORKDIR /app
 
+EXPOSE 6379
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
